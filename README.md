@@ -1,59 +1,209 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Dorothea Rescue Centre - Admission Form System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive digital admission form system for Dorothea Rescue Centre, built with Laravel and Filament. This system replaces manual paper-based forms with a user-friendly web interface for managing child admissions, tracking information, and generating professional PDF documents.
 
-## About Laravel
+## 🎯 Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Dorothea Rescue Centre is a rescue center dedicated to providing care and support for vulnerable children. This system digitizes the entire admission process, making it easier for staff to:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Capture comprehensive child admission information through a multi-step wizard
+- View and manage all child records in an organized interface
+- Generate professional PDF admission forms
+- Track education, health, family, and rescue details
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Features
 
-## Learning Laravel
+### 📝 Multi-Step Admission Form
+- **6-Step Wizard Interface** for structured data entry:
+  1. Child Information (personal details, place of birth)
+  2. Admission Details (referral information, care placement, reasons for admission)
+  3. Rescue Details (found location, case history, previous placements)
+  4. Education Background (school history, current education)
+  5. Family Information (parents, siblings)
+  6. Health Status & Signatures
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 📊 Data Management
+- **Comprehensive Record Viewing** with organized tabs:
+  - Personal Info
+  - Place of Birth
+  - Admission Details
+  - Rescue & Case History
+  - Education
+  - Family
+  - Health
+  - Signatures
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📄 PDF Export
+- Generate professional PDF admission forms
+- Matches original form layout and design
+- Includes all collected information and signatures
 
-## Laravel Sponsors
+### 🎨 Beautiful Landing Page
+- Modern, inspirational landing page
+- African-inspired design elements
+- Brand colors: Jungle Green, Yellow, and Maroon
+- Responsive design for all devices
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Technology Stack
 
-### Premium Partners
+- **Framework:** Laravel 12
+- **Admin Panel:** Filament 4
+- **Database:** MySQL
+- **PDF Generation:** DomPDF (barryvdh/laravel-dompdf)
+- **Frontend:** Blade Templates, Custom CSS
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📋 Requirements
 
-## Contributing
+- PHP >= 8.2
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM (for assets)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Installation
 
-## Code of Conduct
+1. **Clone the repository:**
+   ```bash
+   git clone git@github.com:Joseachiengphine/dorothea-rescue-centre.git
+   cd dorothea-rescue-centre
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Install dependencies:**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Security Vulnerabilities
+3. **Environment setup:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. **Configure database in `.env`:**
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
 
-## License
+5. **Run migrations:**
+   ```bash
+   php artisan migrate
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. **Create storage link:**
+   ```bash
+   php artisan storage:link
+   ```
+
+7. **Build assets:**
+   ```bash
+   npm run build
+   ```
+
+8. **Start the development server:**
+   ```bash
+   php artisan serve
+   ```
+
+9. **Access the application:**
+   - Landing Page: `http://localhost:8000`
+   - Admin Panel: `http://localhost:8000/admin`
+   - Login with your admin credentials
+
+## 📁 Project Structure
+
+```
+dorothea-rescue-centre/
+├── app/
+│   ├── Filament/Resources/        # Filament resource definitions
+│   ├── Models/                     # Eloquent models
+│   └── Providers/                  # Service providers
+├── database/
+│   └── migrations/                 # Database migrations
+├── public/
+│   └── images/                     # Public images (logo, landing page images)
+├── resources/
+│   ├── views/
+│   │   ├── landing.blade.php      # Landing page
+│   │   └── pdf/
+│   │       └── admission-form.blade.php  # PDF template
+│   ├── css/
+│   └── js/
+└── routes/
+    └── web.php                     # Web routes
+```
+
+## 🎨 Brand Colors
+
+- **Primary (Maroon):** `#4E1B1B`
+- **Success (Jungle Green):** `#29AB87`
+- **Warning/Info (Yellow):** `#FFFF00`
+
+## 📚 Documentation
+
+- **Technical Documentation:** See `PROJECT_DOCUMENTATION.md`
+- **Simple Guide:** See `PROJECT_DOCUMENTATION_SIMPLE.md`
+- **Database Schema:** See `CORRECTED_SCHEMA.sql`
+
+## 🔐 Admin Access
+
+Access the admin panel at `/admin/login`. Create your first admin user:
+
+```bash
+php artisan make:filament-user
+```
+
+## 📝 Key Features Details
+
+### Admission Form Wizard
+- Full-width, step-by-step interface
+- Conditional fields (e.g., education fields appear when toggles are enabled)
+- File uploads for signatures
+- Validation at each step
+
+### Data Display
+- Tabbed interface for organized viewing
+- Color-coded badges for status indicators
+- Icons for visual recognition
+- Markdown support for long text fields
+
+### PDF Generation
+- Professional header with logo
+- All form sections included
+- Tables for parents, siblings, and placements
+- Signature image support
+
+## 🌐 Using Ngrok (Optional)
+
+To expose your local development server:
+
+```bash
+./start-ngrok.sh
+```
+
+Or manually:
+```bash
+ngrok http 8000
+```
+
+See `NGROK_SETUP.md` for detailed instructions.
+
+## 🤝 Contributing
+
+This is a private project for Dorothea Rescue Centre. For questions or issues, please contact the development team.
+
+## 📄 License
+
+This project is proprietary software for Dorothea Rescue Centre.
+
+## 🙏 Acknowledgments
+
+Built with care for Dorothea Rescue Centre - "A Heart of Mercy"
+
+---
+
+**For more information, see the project documentation files in the repository root.**

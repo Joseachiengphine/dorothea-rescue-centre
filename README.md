@@ -1,8 +1,8 @@
 # Dorothea Rescue Centre - Admission Form System
 
-A comprehensive digital admission form system for Dorothea Rescue Centre, built with Laravel and Filament. This system replaces manual paper-based forms with a user-friendly web interface for managing child admissions, tracking information, and generating professional PDF documents.
+A comprehensive digital system for Dorothea Rescue Centre, built with Laravel and Filament. This system replaces manual paper-based forms with a user-friendly web interface for managing child admissions, tracking information, and generating professional PDF documents.
 
-## 🎯 Project Overview
+## Project Overview
 
 Dorothea Rescue Centre is a rescue center dedicated to providing care and support for vulnerable children. This system digitizes the entire admission process, making it easier for staff to:
 
@@ -11,9 +11,9 @@ Dorothea Rescue Centre is a rescue center dedicated to providing care and suppor
 - Generate professional PDF admission forms
 - Track education, health, family, and rescue details
 
-## ✨ Features
+##  Features
 
-### 📝 Multi-Step Admission Form
+###  Multi-Step Admission Form
 - **6-Step Wizard Interface** for structured data entry:
   1. Child Information (personal details, place of birth)
   2. Admission Details (referral information, care placement, reasons for admission)
@@ -22,7 +22,7 @@ Dorothea Rescue Centre is a rescue center dedicated to providing care and suppor
   5. Family Information (parents, siblings)
   6. Health Status & Signatures
 
-### 📊 Data Management
+###  Data Management
 - **Comprehensive Record Viewing** with organized tabs:
   - Personal Info
   - Place of Birth
@@ -33,18 +33,18 @@ Dorothea Rescue Centre is a rescue center dedicated to providing care and suppor
   - Health
   - Signatures
 
-### 📄 PDF Export
+###  PDF Export
 - Generate professional PDF admission forms
 - Matches original form layout and design
 - Includes all collected information and signatures
 
-### 🎨 Beautiful Landing Page
+###  Beautiful Landing Page
 - Modern, inspirational landing page
 - African-inspired design elements
 - Brand colors: Jungle Green, Yellow, and Maroon
 - Responsive design for all devices
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Framework:** Laravel 12
 - **Admin Panel:** Filament 4
@@ -52,14 +52,14 @@ Dorothea Rescue Centre is a rescue center dedicated to providing care and suppor
 - **PDF Generation:** DomPDF (barryvdh/laravel-dompdf)
 - **Frontend:** Blade Templates, Custom CSS
 
-## 📋 Requirements
+##  Requirements
 
 - PHP >= 8.2
 - Composer
 - MySQL/MariaDB
 - Node.js & NPM (for assets)
 
-## 🚀 Installation
+##  Installation
 
 1. **Clone the repository:**
    ```bash
@@ -114,7 +114,7 @@ Dorothea Rescue Centre is a rescue center dedicated to providing care and suppor
    - Admin Panel: `http://localhost:8000/admin`
    - Login with your admin credentials
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 dorothea-rescue-centre/
@@ -137,19 +137,19 @@ dorothea-rescue-centre/
     └── web.php                     # Web routes
 ```
 
-## 🎨 Brand Colors
+##  Brand Colors
 
 - **Primary (Maroon):** `#4E1B1B`
 - **Success (Jungle Green):** `#29AB87`
 - **Warning/Info (Yellow):** `#FFFF00`
 
-## 📚 Documentation
+##  Documentation
 
 - **Technical Documentation:** See `PROJECT_DOCUMENTATION.md`
 - **Simple Guide:** See `PROJECT_DOCUMENTATION_SIMPLE.md`
 - **Database Schema:** See `CORRECTED_SCHEMA.sql`
 
-## 🔐 Admin Access
+##  Admin Access
 
 Access the admin panel at `/admin/login`. Create your first admin user:
 
@@ -157,7 +157,7 @@ Access the admin panel at `/admin/login`. Create your first admin user:
 php artisan make:filament-user
 ```
 
-## 📝 Key Features Details
+##  Key Features Details
 
 ### Admission Form Wizard
 - Full-width, step-by-step interface
@@ -177,33 +177,17 @@ php artisan make:filament-user
 - Tables for parents, siblings, and placements
 - Signature image support
 
-## 🌐 Using Ngrok (Optional)
 
-To expose your local development server:
-
-```bash
-./start-ngrok.sh
-```
-
-Or manually:
-```bash
-ngrok http 8000
-```
-
-See `NGROK_SETUP.md` for detailed instructions.
-
-## 🤝 Contributing
+##  Contributing
 
 This is a private project for Dorothea Rescue Centre. For questions or issues, please contact the development team.
 
-## 📄 License
+##  License
 
 This project is proprietary software for Dorothea Rescue Centre.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 Built with care for Dorothea Rescue Centre - "A Heart of Mercy"
 
 ---
-
-**For more information, see the project documentation files in the repository root.**

@@ -39,7 +39,7 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 5%;
+            padding: 0.6rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -54,7 +54,7 @@
         }
 
         .logo-container img {
-            height: 50px;
+            height: 42px;
             width: auto;
         }
 
@@ -70,6 +70,12 @@
             list-style: none;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .nav-links a {
             text-decoration: none;
             color: var(--maroon);
@@ -81,16 +87,19 @@
             color: var(--jungle-green);
         }
 
-        .nav-links a.login-btn {
+        .login-btn {
             background: var(--maroon);
             color: var(--white);
-            padding: 0.5rem 1.2rem;
+            padding: 0.45rem 1.1rem;
             border-radius: 5px;
             font-weight: 600;
             transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.95rem;
         }
 
-        .nav-links a.login-btn:hover {
+        .login-btn:hover {
             background: var(--dark-maroon);
             color: var(--white);
         }
@@ -142,26 +151,26 @@
             text-align: center;
             color: var(--maroon);
             z-index: 10;
-            width: 90%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 2.5rem;
+            width: 85%;
+            max-width: 670px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem 1.75rem;
             border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
         .hero-headline {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
             line-height: 1.2;
             color: var(--maroon);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             font-weight: 400;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.75rem;
             color: var(--dark-maroon);
         }
 
@@ -173,8 +182,8 @@
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
             font-weight: 600;
             border-radius: 5px;
             text-decoration: none;
@@ -223,7 +232,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 80px;
+            height: 56px;
             background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
             opacity: 0.9;
             z-index: 5;
@@ -243,8 +252,45 @@
 
         /* Mission Section */
         .mission-section {
-            padding: 5rem 5%;
+            margin-top: -70px;
+            padding: 4.75rem 5% 5rem;
             background: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('{{ asset("images/background-2.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .mission-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Education Section Background */
+        .education-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('{{ asset("images/hope.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
         }
 
         .container {
@@ -257,6 +303,7 @@
             font-weight: 700;
             color: var(--maroon);
             text-align: center;
+            margin-top: 0;
             margin-bottom: 3rem;
         }
 
@@ -441,12 +488,24 @@
                 display: none;
             }
 
+            .nav-actions {
+                display: none;
+            }
+
             .hero-headline {
                 font-size: 2rem;
             }
 
             .hero-subtitle {
                 font-size: 1.2rem;
+            }
+
+            .hero-content {
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                width: 90%;
+                max-width: 800px;
             }
 
             .mission-content {
@@ -475,9 +534,11 @@
             <li><a href="#about">About</a></li>
             <li><a href="#programs">Programs</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="/admin/login" class="login-btn">Login</a></li>
         </ul>
-        <a href="#donate" class="nav-cta">Donate</a>
+        <div class="nav-actions">
+            <a href="#donate" class="nav-cta">Donate</a>
+            <a href="/admin/login" class="login-btn">Login</a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -528,6 +589,23 @@
                     <p>At Dorothea Rescue Centre, we believe in the power of family. Our family reunification program works tirelessly to bring children back to their loved ones.</p>
                     <p>We provide comprehensive support and resources to ensure stable, loving home environments where every child can thrive and grow in the care of their family.</p>
                     <p>Through counseling, financial assistance, and ongoing follow-up, we help families rebuild their bonds and create lasting, positive change for their children's futures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="family-section education-bg" style="padding: 5rem 5%; background: var(--white); position: relative; overflow: hidden;">
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2 class="section-title">Education & Learning</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>Education is the foundation of a brighter future. At Dorothea Rescue Centre, we are committed to providing quality education and learning opportunities for every child in our care.</p>
+                    <p>Through our education programs, we ensure that children have access to schools, learning materials, and the support they need to excel academically and reach their full potential.</p>
+                    <p>We believe that education empowers children to break cycles of poverty and build the skills they need to create positive change in their lives and communities.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="{{ asset('images/holding_books.jpg') }}" alt="Education and Learning">
                 </div>
             </div>
         </div>

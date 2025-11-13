@@ -4,7 +4,7 @@
 
 **Option 1 - Sunrise & Hope:**
 ```
-Beautiful warm sunrise over peaceful African landscape, golden and orange hues, silhouette of two caring hands reaching out, soft light filtering through, conveys hope and compassion, warm maroon and gold tones, professional photography, cinematic lighting, shallow depth of field
+
 ```
 
 **Option 2 - Children Portrait:**

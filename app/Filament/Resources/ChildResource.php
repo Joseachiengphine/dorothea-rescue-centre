@@ -48,6 +48,8 @@ class ChildResource extends Resource
 
     protected static string|null|\UnitEnum $navigationGroup = 'Admissions';
 
+    protected static ?int $navigationSort = 2;
+
     public static function form(Schema $schema): Schema
     {
         return $schema
@@ -1105,6 +1107,57 @@ class ChildResource extends Resource
                                                     ->columnSpanFull()
                                                     ->imageHeight('150px')
                                                     ->imageWidth('300px'),
+                                            ])
+                                            ->columnSpanFull()
+                                            ->columns(3),
+                                    ])
+                                    ->columnSpanFull(),
+                            ])
+                            ->columns(3),
+                        Tab::make('Reintegrations')
+                            ->icon('heroicon-o-arrow-right-circle')
+                            ->schema([
+                                Section::make('Reintegration Records')
+                                    ->schema([
+                                        Infolists\Components\RepeatableEntry::make('reintegrations')
+                                            ->label('')
+                                            ->schema([
+                                                Infolists\Components\TextEntry::make('reintegration_number')
+                                                    ->label('Reintegration #')
+                                                    ->weight('bold')
+                                                    ->color('primary'),
+                                                Infolists\Components\TextEntry::make('date_of_exit')
+                                                    ->label('Exit Date')
+                                                    ->date('d/m/Y')
+                                                    ->color('success'),
+                                                Infolists\Components\TextEntry::make('status')
+                                                    ->badge()
+                                                    ->color(fn (string $state): string => match ($state) {
+                                                        'Planned' => 'warning',
+                                                        'In Progress' => 'info',
+                                                        'Completed' => 'success',
+                                                        'Cancelled' => 'danger',
+                                                        default => 'gray',
+                                                    }),
+                                                Infolists\Components\TextEntry::make('receiving_person_name')
+                                                    ->label('Receiving Person')
+                                                    ->weight('bold'),
+                                                Infolists\Components\TextEntry::make('relationship_to_child')
+                                                    ->label('Relationship')
+                                                    ->badge()
+                                                    ->color('info'),
+                                                Infolists\Components\TextEntry::make('reintegration_type')
+                                                    ->label('Type')
+                                                    ->badge()
+                                                    ->color('primary'),
+                                                Infolists\Components\TextEntry::make('reasons_for_exit')
+                                                    ->label('Reasons for Exit')
+                                                    ->columnSpanFull()
+                                                    ->limit(100),
+                                                Infolists\Components\TextEntry::make('first_follow_up_date')
+                                                    ->label('Follow-up Date')
+                                                    ->date('d/m/Y')
+                                                    ->icon('heroicon-o-calendar'),
                                             ])
                                             ->columnSpanFull()
                                             ->columns(3),

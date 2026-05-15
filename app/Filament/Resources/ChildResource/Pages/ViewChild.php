@@ -14,6 +14,28 @@ class ViewChild extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('create_home_tracing')
+                ->label('Create Home Tracing')
+                ->icon('heroicon-o-home')
+                ->color('info')
+                ->visible(fn () => $this->record->admission !== null)
+                ->action(function () {
+                    return redirect()->route('filament.admin.resources.home-tracings.create', [
+                        'child_id' => $this->record->id,
+                        'girl_name' => $this->record->full_name,
+                        'girl_age' => $this->record->date_of_birth ? $this->record->date_of_birth->age : null,
+                    ]);
+                }),
+            Actions\Action::make('create_reintegration')
+                ->label('Create Reintegration')
+                ->icon('heroicon-o-heart')
+                ->color('success')
+                ->visible(fn () => $this->record->admission !== null)
+                ->action(function () {
+                    return redirect()->route('filament.admin.resources.reintegrations.create', [
+                        'child_id' => $this->record->id,
+                    ]);
+                }),
             Actions\Action::make('download_pdf')
                 ->label('Download PDF')
                 ->icon('heroicon-o-document-arrow-down')

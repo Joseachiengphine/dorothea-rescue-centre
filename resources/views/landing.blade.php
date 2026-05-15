@@ -30,6 +30,8 @@
             line-height: 1.6;
             color: var(--black);
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         /* Navigation */
@@ -90,13 +92,13 @@
         .login-btn {
             background: var(--maroon);
             color: var(--white);
-            padding: 0.45rem 1.1rem;
-            border-radius: 5px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
             font-weight: 600;
             transition: background 0.3s;
             text-decoration: none;
             display: inline-block;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
         }
 
         .login-btn:hover {
@@ -120,11 +122,11 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
             display: flex;
             position: relative;
             margin-top: 70px;
         }
+
 
         .hero-image-container {
             width: 100%;
@@ -160,16 +162,17 @@
         }
 
         .hero-headline {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3.4rem;
+            font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            line-height: 1.15;
             color: var(--maroon);
         }
 
         .hero-subtitle {
-            font-size: 1.05rem;
+            font-size: 1.35rem;
             font-weight: 400;
+            line-height: 1.8;
             margin-bottom: 1.75rem;
             color: var(--dark-maroon);
         }
@@ -286,7 +289,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('{{ asset("images/hope.jpg") }}');
+            background-image: url('{{ asset("images/holding_books_2.png") }}');
             background-size: cover;
             background-position: center;
             opacity: 0.15;
@@ -402,6 +405,19 @@
             position: relative;
             overflow: hidden;
         }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('{{ asset("images/hope.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
 
         .cta-content {
             max-width: 1200px;
@@ -493,11 +509,15 @@
             }
 
             .hero-headline {
-                font-size: 2rem;
+                font-size: clamp(3rem, 5vw, 4.2rem);
+                font-weight: 800;
+                line-height: 1.1;
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: clamp(1.25rem, 2vw, 1.5rem);
+                max-width: 600px;
+                margin: 0 auto 1.75rem;
             }
 
             .hero-content {
@@ -529,14 +549,14 @@
             <img src="{{ asset('images/dorothea_rescue_logo.jpeg') }}" alt="Dorothea Rescue Centre Logo">
             <div class="logo-text">Dorothea Rescue Centre</div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+{{--        <ul class="nav-links">--}}
+{{--            <li><a href="#home">Home</a></li>--}}
+{{--            <li><a href="#about">About</a></li>--}}
+{{--            <li><a href="#programs">Programs</a></li>--}}
+{{--            <li><a href="#contact">Contact</a></li>--}}
+{{--        </ul>--}}
         <div class="nav-actions">
-            <a href="#donate" class="nav-cta">Donate</a>
+{{--            <a href="#donate" class="nav-cta">Donate</a>--}}
             <a href="/admin/login" class="login-btn">Login</a>
         </div>
     </nav>
@@ -549,10 +569,10 @@
             <div class="hero-content">
                 <h1 class="hero-headline">IN THE HEART OF EVERY CHILD IS A HUNGER FOR HOME</h1>
                 <p class="hero-subtitle">Children without families are the most vulnerable people in the world. We provide hope, care, and a safe home.</p>
-                <div class="hero-cta-buttons">
-                    <a href="#donate" class="btn btn-primary">Donate Now</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
-                </div>
+{{--                <div class="hero-cta-buttons">--}}
+{{--                    <a href="#donate" class="btn btn-primary">Donate Now</a>--}}
+{{--                    <a href="#about" class="btn btn-secondary">Learn More</a>--}}
+{{--                </div>--}}
             </div>
             <div class="golden-bar">
                 <div class="golden-bar-text">A Heart of Mercy</div>
@@ -560,121 +580,121 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="mission-section" id="about">
-        <div class="container">
-            <h2 class="section-title">Our Mission</h2>
-            <div class="mission-content">
-                <div class="mission-text">
-                    <p>Dorothea Rescue Centre is dedicated to providing a safe haven, education, and comprehensive care for vulnerable children in Africa. We believe every child deserves love, protection, and the opportunity to thrive.</p>
-                    <p>Through our programs, we offer rescue services, education, healthcare, family reunification support, and a nurturing environment where children can heal, grow, and build a brighter future.</p>
-                    <p>With a heart of mercy, we work tirelessly to ensure that no child is left behind, providing them with the tools and support they need to overcome adversity and achieve their dreams.</p>
-                </div>
-                <div class="mission-image">
-                    <img src="{{ asset('images/coming_together.jpg') }}" alt="Community and Care">
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <!-- Mission Section -->--}}
+{{--    <section class="mission-section" id="about">--}}
+{{--        <div class="container">--}}
+{{--            <h2 class="section-title">Our Mission</h2>--}}
+{{--            <div class="mission-content">--}}
+{{--                <div class="mission-text">--}}
+{{--                    <p>Dorothea Rescue Centre is dedicated to providing a safe haven, education, and comprehensive care for vulnerable children in Africa. We believe every child deserves love, protection, and the opportunity to thrive.</p>--}}
+{{--                    <p>Through our programs, we offer rescue services, education, healthcare, family reunification support, and a nurturing environment where children can heal, grow, and build a brighter future.</p>--}}
+{{--                    <p>With a heart of mercy, we work tirelessly to ensure that no child is left behind, providing them with the tools and support they need to overcome adversity and achieve their dreams.</p>--}}
+{{--                </div>--}}
+{{--                <div class="mission-image">--}}
+{{--                    <img src="{{ asset('images/hand_gently.jpg') }}" alt="Community and Care">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <!-- Family Reunification Section -->
-    <section class="family-section" style="padding: 5rem 5%; background: var(--cream);">
-        <div class="container">
-            <h2 class="section-title">Family Reunification</h2>
-            <div class="mission-content">
-                <div class="mission-image">
-                    <img src="{{ asset('images/family-reunification.png') }}" alt="Family Reunification">
-                </div>
-                <div class="mission-text">
-                    <p>At Dorothea Rescue Centre, we believe in the power of family. Our family reunification program works tirelessly to bring children back to their loved ones.</p>
-                    <p>We provide comprehensive support and resources to ensure stable, loving home environments where every child can thrive and grow in the care of their family.</p>
-                    <p>Through counseling, financial assistance, and ongoing follow-up, we help families rebuild their bonds and create lasting, positive change for their children's futures.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <!-- Family Reunification Section -->--}}
+{{--    <section class="family-section" style="padding: 5rem 5%; background: var(--cream);">--}}
+{{--        <div class="container">--}}
+{{--            <h2 class="section-title">Family Reunification</h2>--}}
+{{--            <div class="mission-content">--}}
+{{--                <div class="mission-image">--}}
+{{--                    <img src="{{ asset('images/family-reunification.png') }}" alt="Family Reunification">--}}
+{{--                </div>--}}
+{{--                <div class="mission-text">--}}
+{{--                    <p>At Dorothea Rescue Centre, we believe in the power of family. Our family reunification program works tirelessly to bring children back to their loved ones.</p>--}}
+{{--                    <p>We provide comprehensive support and resources to ensure stable, loving home environments where every child can thrive and grow in the care of their family.</p>--}}
+{{--                    <p>Through counseling, financial assistance, and ongoing follow-up, we help families rebuild their bonds and create lasting, positive change for their children's futures.</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <!-- Education Section -->
-    <section class="family-section education-bg" style="padding: 5rem 5%; background: var(--white); position: relative; overflow: hidden;">
-        <div class="container" style="position: relative; z-index: 1;">
-            <h2 class="section-title">Education & Learning</h2>
-            <div class="mission-content">
-                <div class="mission-text">
-                    <p>Education is the foundation of a brighter future. At Dorothea Rescue Centre, we are committed to providing quality education and learning opportunities for every child in our care.</p>
-                    <p>Through our education programs, we ensure that children have access to schools, learning materials, and the support they need to excel academically and reach their full potential.</p>
-                    <p>We believe that education empowers children to break cycles of poverty and build the skills they need to create positive change in their lives and communities.</p>
-                </div>
-                <div class="mission-image">
-                    <img src="{{ asset('images/holding_books.jpg') }}" alt="Education and Learning">
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <!-- Education Section -->--}}
+{{--    <section class="family-section education-bg" style="padding: 5rem 5%; background: var(--white); position: relative; overflow: hidden;">--}}
+{{--        <div class="container" style="position: relative; z-index: 1;">--}}
+{{--            <h2 class="section-title">Education & Learning</h2>--}}
+{{--            <div class="mission-content">--}}
+{{--                <div class="mission-text">--}}
+{{--                    <p>Education is the foundation of a brighter future. At Dorothea Rescue Centre, we are committed to providing quality education and learning opportunities for every child in our care.</p>--}}
+{{--                    <p>Through our education programs, we ensure that children have access to schools, learning materials, and the support they need to excel academically and reach their full potential.</p>--}}
+{{--                    <p>We believe that education empowers children to break cycles of poverty and build the skills they need to create positive change in their lives and communities.</p>--}}
+{{--                </div>--}}
+{{--                <div class="mission-image">--}}
+{{--                    <img src="{{ asset('images/holding_books.jpg') }}" alt="Education and Learning">--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <!-- Features/Programs Section -->
-    <section class="features-section" id="programs">
-        <div class="container">
-            <h2 class="section-title">Our Programs</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎓</div>
-                    <h3 class="feature-title">Education</h3>
-                    <p class="feature-description">Providing quality education and learning opportunities to help children reach their full potential and build a better future.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏥</div>
-                    <h3 class="feature-title">Health & Care</h3>
-                    <p class="feature-description">Comprehensive healthcare services ensuring every child receives the medical attention and care they need to thrive.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍👩‍👧</div>
-                    <h3 class="feature-title">Family Reunification</h3>
-                    <p class="feature-description">Supporting families to reunite and providing ongoing assistance to ensure stable, loving home environments.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3 class="feature-title">Community Support</h3>
-                    <p class="feature-description">Building strong community networks and partnerships to create lasting positive change for children and families.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <!-- Features/Programs Section -->--}}
+{{--    <section class="features-section" id="programs">--}}
+{{--        <div class="container">--}}
+{{--            <h2 class="section-title">Our Programs</h2>--}}
+{{--            <div class="features-grid">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">🎓</div>--}}
+{{--                    <h3 class="feature-title">Education</h3>--}}
+{{--                    <p class="feature-description">Providing quality education and learning opportunities to help children reach their full potential and build a better future.</p>--}}
+{{--                </div>--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">🏥</div>--}}
+{{--                    <h3 class="feature-title">Health & Care</h3>--}}
+{{--                    <p class="feature-description">Comprehensive healthcare services ensuring every child receives the medical attention and care they need to thrive.</p>--}}
+{{--                </div>--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">👨‍👩‍👧</div>--}}
+{{--                    <h3 class="feature-title">Family Reunification</h3>--}}
+{{--                    <p class="feature-description">Supporting families to reunite and providing ongoing assistance to ensure stable, loving home environments.</p>--}}
+{{--                </div>--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">🤝</div>--}}
+{{--                    <h3 class="feature-title">Community Support</h3>--}}
+{{--                    <p class="feature-description">Building strong community networks and partnerships to create lasting positive change for children and families.</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <!-- Call to Action Section -->
-    <section class="cta-section" id="donate">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-image">
-                    <img src="{{ asset('images/hand_gently.jpg') }}" alt="Heart of Mercy - Support Our Mission">
-                </div>
-                <div class="cta-text">
-                    <h2 class="cta-title">Join Us in Making a Difference</h2>
-                    <p class="cta-description">
-                        Every child deserves love, care, and the opportunity to thrive. Your support helps us provide safe homes, education, healthcare, and hope to vulnerable children across Africa.
-                    </p>
-                    <p class="cta-description">
-                        Together, we can create lasting change and give every child the chance to build a brighter future.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#donate" class="btn btn-primary">Donate Now</a>
-                        <a href="#contact" class="btn btn-secondary">Get Involved</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <!-- Call to Action Section -->--}}
+{{--    <section class="cta-section" id="donate">--}}
+{{--        <div class="container">--}}
+{{--            <div class="cta-content">--}}
+{{--                <div class="cta-image">--}}
+{{--                    <img src="{{ asset('images/coming_together.jpg') }}" alt="Heart of Mercy - Support Our Mission">--}}
+{{--                </div>--}}
+{{--                <div class="cta-text">--}}
+{{--                    <h2 class="cta-title">Join Us in Making a Difference</h2>--}}
+{{--                    <p class="cta-description">--}}
+{{--                        Every child deserves love, care, and the opportunity to thrive. Your support helps us provide safe homes, education, healthcare, and hope to vulnerable children across Africa.--}}
+{{--                    </p>--}}
+{{--                    <p class="cta-description">--}}
+{{--                        Together, we can create lasting change and give every child the chance to build a brighter future.--}}
+{{--                    </p>--}}
+{{--                    <div class="cta-buttons">--}}
+{{--                        <a href="#donate" class="btn btn-primary">Donate Now</a>--}}
+{{--                        <a href="#contact" class="btn btn-secondary">Get Involved</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="{{ asset('images/dorothea_rescue_logo.jpeg') }}" alt="Dorothea Rescue Centre Logo">
-            </div>
-            <p class="footer-text">Dorothea Rescue Centre</p>
-            <p class="footer-text">Providing hope, care, and a safe home for vulnerable children</p>
-            <p class="footer-tagline">A Heart of Mercy</p>
-        </div>
-    </footer>
+{{--    <!-- Footer -->--}}
+{{--    <footer class="footer" id="contact">--}}
+{{--        <div class="footer-content">--}}
+{{--            <div class="footer-logo">--}}
+{{--                <img src="{{ asset('images/dorothea_rescue_logo.jpeg') }}" alt="Dorothea Rescue Centre Logo">--}}
+{{--            </div>--}}
+{{--            <p class="footer-text">Dorothea Rescue Centre</p>--}}
+{{--            <p class="footer-text">Providing hope, care, and a safe home for vulnerable children</p>--}}
+{{--            <p class="footer-tagline">A Heart of Mercy</p>--}}
+{{--        </div>--}}
+{{--    </footer>--}}
 </body>
 </html>
 

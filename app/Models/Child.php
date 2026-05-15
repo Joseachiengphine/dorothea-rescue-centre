@@ -75,6 +75,21 @@ class Child extends Model
         return $this->hasMany(Signature::class);
     }
 
+    public function referrals(): HasMany
+    {
+        return $this->hasMany(Referral::class);
+    }
+
+    public function homeTracings(): HasMany
+    {
+        return $this->hasMany(HomeTracing::class);
+    }
+
+    public function reintegrations(): HasMany
+    {
+        return $this->hasMany(Reintegration::class);
+    }
+
     public function getFullNameAttribute(): string
     {
         $parts = array_filter([

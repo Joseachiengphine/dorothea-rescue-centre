@@ -14,7 +14,7 @@
             color: #000;
         }
         .header {
-            border: 2px solid #4E1B1B;
+            border: 2px solid #284420;
             padding: 15px;
             margin-bottom: 20px;
             background-color: #fff;
@@ -68,7 +68,7 @@
             page-break-inside: avoid;
         }
         .section-title {
-            background-color: #29AB87;
+            background-color: #4E1B1B;
             color: white;
             padding: 8px 12px;
             font-weight: bold;
@@ -147,7 +147,7 @@
             text-align: left;
         }
         table th {
-            background-color: #29AB87;
+            background-color: #4E1B1B;
             color: white;
             font-weight: bold;
             text-align: center;

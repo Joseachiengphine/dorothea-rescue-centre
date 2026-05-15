@@ -2,6 +2,14 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\ReferralResource;
+use App\Filament\Resources\StreetVisitResource;
+use App\Filament\Resources\HomeTracingResource;
+use App\Filament\Resources\ReintegrationResource;
+use App\Filament\Widgets\StatsOverviewWidget;
+use App\Filament\Widgets\StatusDonutChart;
+use App\Filament\Widgets\CaseTypesPieChart;
+use App\Filament\Widgets\MonthlyTrendsChart;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -40,14 +48,22 @@ class AdminPanelProvider extends PanelProvider
                 'info' => Color::hex('#FFFF00'), // Yellow
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
+            ->resources([
+                StreetVisitResource::class,
+                ReferralResource::class,
+                HomeTracingResource::class,
+                ReintegrationResource::class,
+            ])
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
                 Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                StatsOverviewWidget::class,
+                StatusDonutChart::class,
+                CaseTypesPieChart::class,
+                MonthlyTrendsChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,
